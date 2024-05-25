@@ -18,6 +18,8 @@ Un exercice technique que nous utilisions, basé sur le calcul de la suite de Fi
 
 Ce projet est construit comme un projet NodeJS.
 
+Il se base sur le template link:https://github.com/RomainFallet/typescript-example[typescript-example] de Romain Fallet.
+
 == Cycle De Vie
 
 |===
