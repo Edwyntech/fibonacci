@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "moduleResolution": "NodeNext",
+    "target": "ESNext",
+    "module": "NodeNext",
+    "lib": [
+      "ESNext"
+    ],
+    "baseUrl": "src",
+    "noEmit": true
+  },
+  "exclude": [
+    "**/*.spec.ts"
+  ]
+}
