@@ -10,6 +10,10 @@ export class Matrix22 {
             this.c * other.b + this.d * other.d
         );
     }
+
+    squared(): Matrix22 {
+        return this.times(this);
+    }
 }
 
 export const ZERO_MATRIX: Matrix22 = new Matrix22(

@@ -2,7 +2,7 @@ import {Matrix22, Q_MATRIX} from "./matrix22.js";
 
 export class Fibonacci {
 
-    _memo: Matrix22[] = [
+    #memo: Matrix22[] = [
         new Matrix22(
             BigInt(0),
             BigInt(0),
@@ -11,21 +11,18 @@ export class Fibonacci {
         Q_MATRIX];
 
     qToThePowerOf(exponent: number): Matrix22 {
-        if (this._memo[exponent] !== undefined) {
-            return this._memo[exponent];
+        if (this.#memo[exponent] !== undefined) {
+            return this.#memo[exponent];
         }
 
         const halfExponent = (exponent / 2) | 0;
-        const square = this.qToThePowerOf(halfExponent)
-            .times(this.qToThePowerOf(halfExponent));
-
-        if (exponent % 2 === 0) {
-            this._memo[exponent] = square;
-        } else {
-            this._memo[exponent] = square.times(Q_MATRIX);
+        let matrixPowered = this.qToThePowerOf(halfExponent).squared();
+        if (exponent % 2 !== 0) {
+            matrixPowered = matrixPowered.times(Q_MATRIX);
         }
 
-        return this._memo[exponent];
+        this.#memo[exponent] = matrixPowered;
+        return this.#memo[exponent];
     }
 
     of(index: number): bigint {
