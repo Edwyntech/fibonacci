@@ -16,20 +16,21 @@ export class Fibonacci {
         }
 
         const halfExponent = (exponent / 2) | 0;
+        const square = this.qToThePowerOf(halfExponent)
+            .times(this.qToThePowerOf(halfExponent));
+
         if (exponent % 2 === 0) {
-            this._memo[exponent] = this.qToThePowerOf(halfExponent)
-                .times(this.qToThePowerOf(halfExponent));
+            this._memo[exponent] = square;
         } else {
-            this._memo[exponent] = this.qToThePowerOf(halfExponent)
-                .times(this.qToThePowerOf(halfExponent))
-                .times(Q_MATRIX);
+            this._memo[exponent] = square.times(Q_MATRIX);
         }
+
         return this._memo[exponent];
     }
 
     of(index: number): bigint {
         if (index < 2) {
-            return BigInt(index);
+            return this.qToThePowerOf(index).a;
         }
         return this.qToThePowerOf(index - 1).a;
     }
