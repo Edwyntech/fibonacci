@@ -14,6 +14,8 @@ image:{ci}/badge.svg[link={ci},window=_blank]
 
 Un exercice technique que nous utilisions, basé sur le calcul de la suite de Fibonacci.
 
+== Énoncé
+
 Nous souhaitons calculer les valeurs de la suite de Fibonacci qui se définit comme suit :
 
 - fibonacci(0) = 0
