@@ -14,6 +14,21 @@ image:{ci}/badge.svg[link={ci},window=_blank]
 
 Un exercice technique que nous utilisions, basé sur le calcul de la suite de Fibonacci.
 
+Voici l'énoncé:
+
+[quote]
+====
+Nous souhaitons calculer les valeurs de la suite de Fibonacci.
+
+La suite de Fibonacci (ici notée f) se définit comme suit :
+
+* f(0) = 0
+* f(1) = 1
+* Pour tout n >= 2 : f(n) = f(n-1) + f(n-2)
+====
+
+NOTE: Le calcul se fait jusqu'à l'index 1 000 000...
+
 == Structure
 
 Ce projet est construit comme un projet NodeJS.
