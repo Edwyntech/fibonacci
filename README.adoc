@@ -28,7 +28,7 @@ TIP: À partir de l'indice 100, on s'amuse...
 
 Ce projet est construit comme un projet NodeJS.
 
-Il se base sur le template link:https://github.com/RomainFallet/typescript-example[typescript-example] de Romain Fallet.
+Il se base sur le template link:https://github.com/RomainFallet/typescript-example[typescript-example] de link:https://github.com/RomainFallet[Romain Fallet].
 
 == Cycle De Vie
 
