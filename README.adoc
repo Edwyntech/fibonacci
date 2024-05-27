@@ -18,16 +18,61 @@ Voici l'énoncé:
 
 [quote]
 ====
-Nous souhaitons calculer les valeurs de la suite de Fibonacci.
-
-La suite de Fibonacci (ici notée f) se définit comme suit :
-
-* f(0) = 0
-* f(1) = 1
-* Pour tout n >= 2 : f(n) = f(n-1) + f(n-2)
+Nous souhaitons calculer les valeurs de la suite de Fibonacci qui se définit comme suit :
+[stem,latexmath]
+++++
+{
+fibonacci(0)=0 \\
+fibonacci(1)=1 \\
+\forall n \in N, n \geq 2 \Rightarrow fibonacci(n)=fibonacci(n-1)+fibonacci(n-2)
+}
+++++
 ====
 
-NOTE: Le calcul se fait jusqu'à l'index 1 000 000...
+À partir de l'indice 100, on s'amuse...
+
+Notons
+
+- stem:[a_n] la suite des lapins adultes
+- stem:[b_n] la suite des lapins bébés
+
+Alors les deux suites se définissent par:
+
+[stem,latexmath]
+++++
+\left\{
+\begin{array}{ll}
+a_0=0,\\
+b_0=1,\\
+a_{n+1} = a_{n} + b_{n},\\
+b_{n+1} = a_{n}.
+\end{array}
+\right.
+++++
+
+Introduisant la matrice
+
+[stem,latexmath]
+++++
+Q=\begin{pmatrix}
+1 & 1\\
+1 & 0
+\end{pmatrix}
+++++
+
+Dans l'équation
+
+[stem,latexmath]
+++++
+\begin{pmatrix}a_{n+1}\\b_{n+1}\end{pmatrix}=Q\begin{pmatrix}a_n\\b_n\end{pmatrix}
+++++
+
+Pour retrouver que
+
+[stem,latexmath]
+++++
+\forall n \in N, n \geq 2 \Rightarrow fibonacci(n)=Q^{n-1}_{00}
+++++
 
 == Structure
 
