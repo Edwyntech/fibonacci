@@ -1,4 +1,4 @@
-import {Matrix22, Q_MATRIX, ZERO_MATRIX} from "./matrix22.js";
+import {Matrix22, ZERO_MATRIX, Q_MATRIX} from "./matrix22.js";
 
 const halfOf = (n: number) => (n / 2) | 0;
 
@@ -17,9 +17,7 @@ export class Fibonacci {
             matrixPowered = matrixPowered.times(Q_MATRIX);
         }
 
-        this.#memo[exponent] = matrixPowered;
-
-        return this.#memo[exponent];
+        return (this.#memo[exponent] = matrixPowered);
     }
 
     of(index: number): bigint {
