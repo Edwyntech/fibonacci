@@ -1,0 +1,59 @@
+= Représentations Des Nombres de Fibonacci
+
+== Notation récursive des nombres de Fibonacci
+
+Notons stem:[AA n in NN], `fib(n)` le nombre de Fibonacci à l'index `n`, posant la définition :
+
+stem:[{
+(fib(0) = 0),
+(fib(1) = 1),
+({: AA n >= 2, fib(n) = fib(n-1) + fib(n-2) :})
+:}]
+
+== Notation Matricielle
+
+Notons pour une génération n
+
+- stem:[a_n] le dénombrement de lapins _adultes_
+- stem:[b_n] le dénombrement de _bébés_ lapins
+
+Alors les générations successives vérifient le système
+
+stem:[{
+(a_{n+1} = a_n + b_n),
+(b_{n+1} = a_n)
+:}]
+
+Ce qui correspond à la notation matricielle
+
+stem:[(
+(a_{n+1}), (b_{n+1})) = ((1,1), (1,0)) ((a_n), (b_n)
+)]
+
+La matrice stem:[(
+(1,1),
+(1,0)
+)] est appelée matrice Q, en référence à sa forme.
+
+En raisonnant de proche en proche, on peut montrer que
+
+stem:[Q^n=(
+(fib(n+1), fib(n)),
+(fib(n), fib(n-1))
+)]
+
+Donc
+
+stem:[AA n, fib(n) = {:Q^{n-1}:}_{0,0}]
+
+[TIP]
+====
+On notera que stem:[det(Q) = -1 != 0], donc Q admet une matrice inverse stem:[Q^{-1}=((0,1), (1,-1))]
+
+Ainsi, par exemple, stem:[{
+(fib(0) = {:Q^{-1}:}_{0,0} = 0),
+(fib(1) = {:Q^0:}_{0,0} = Id_{0,0} = 0)
+:}]
+====
+
+

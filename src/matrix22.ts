@@ -16,11 +16,14 @@ export class Matrix22 {
     }
 }
 
-export const ZERO_MATRIX: Matrix22 = new Matrix22(
-    BigInt(0), BigInt(0),
-    BigInt(0), BigInt(0))
+export const IDENTITY: Matrix22 = new Matrix22(
+    BigInt(1), BigInt(0),
+    BigInt(0), BigInt(1))
 
-export const Q_MATRIX: Matrix22 = new Matrix22(
+export const Q: Matrix22 = new Matrix22(
     BigInt(1), BigInt(1),
     BigInt(1), BigInt(0))
 
+export const Q_INVERSE: Matrix22 = new Matrix22(
+    BigInt(0), BigInt(1),
+    BigInt(1), BigInt(-1))

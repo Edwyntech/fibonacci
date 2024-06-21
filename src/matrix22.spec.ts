@@ -1,21 +1,36 @@
 import {describe, it} from "node:test";
 import * as assert from "node:assert";
-import {Matrix22, Q_MATRIX, ZERO_MATRIX} from "./matrix22.js";
+import {IDENTITY, Matrix22, Q_INVERSE, Q} from "./matrix22.js";
 
 describe('matrix22', () => {
 
-    const Q_MATRIX_SQUARED: Matrix22 = new Matrix22(BigInt(2), BigInt(1), BigInt(1), BigInt(1));
+    const Q_SQUARED: Matrix22 = new Matrix22(
+        BigInt(2), BigInt(1),
+        BigInt(1), BigInt(1));
 
-    it('returns zero-matrix when any matrix is multiplied by zero-matrix', t => {
-        assert.deepStrictEqual(Q_MATRIX.times(ZERO_MATRIX), ZERO_MATRIX);
+    describe('multiplication', () => {
+
+        it('returns identity when multiplying identity by itself', () => {
+            assert.deepStrictEqual(IDENTITY.times(IDENTITY), IDENTITY);
+        })
+
+        it('returns Q squared when multiplying Q by itself', () => {
+            assert.deepStrictEqual(Q.times(Q), Q_SQUARED);
+        })
+
+        it('returns identity when multiplying Q by its inverse', () => {
+            assert.deepStrictEqual(Q.times(Q_INVERSE), IDENTITY);
+        })
     })
 
-    it('squares Q matrix', t => {
-        assert.deepStrictEqual(Q_MATRIX.squared(), Q_MATRIX_SQUARED);
-    })
+    describe('squaring', () => {
 
-    it('squares Q matrix for Q times Q', t => {
-        assert.deepStrictEqual(Q_MATRIX.times(Q_MATRIX), Q_MATRIX_SQUARED);
-    })
+        it('returns identity when squaring identity', () => {
+            assert.deepStrictEqual(IDENTITY.squared(), IDENTITY);
+        })
 
+        it('returns Q squared when squaring Q', () => {
+            assert.deepStrictEqual(Q.squared(), Q_SQUARED);
+        })
+    })
 })
