@@ -6,8 +6,8 @@
 :repo:          https://github.com/{owner}/{project}
 :ci:            {repo}/actions/workflows/ci.yaml
 :linkedin:      https://www.linkedin.com/company/74937487/
-:youtube:       https://www.youtube.com/@EdwynTech
-:twitch:        https://www.twitch.tv/edwyntech
+:youtube:       https://www.youtube.com/@{owner}
+:twitch:        https://www.twitch.tv/{owner}
 :badges:        https://img.shields.io/badge
 
 image:{ci}/badge.svg[link={ci},window=_blank]
