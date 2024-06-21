@@ -20,7 +20,7 @@ export class Fibonacci {
         return (this.#memo[exponent + 1] = matrixPowered);
     }
 
-    of(index: number): bigint {
+    at(index: number): bigint {
         return this.qToThePowerOf(index - 1).a;
     }
 
