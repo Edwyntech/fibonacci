@@ -22,7 +22,9 @@ Nous souhaitons calculer les valeurs de la suite de Fibonacci qui se définit co
 - fibonacci(1) = 1
 - n >= 2, fibonacci(n) = fibonacci(n-1) + fibonacci(n-2)
 
-TIP: À partir de l'indice 100, on s'amuse...
+TIP: Les deux notations utilisées dans l'exercice sont explicitées link:NOTATION.adoc[ici]
+
+L'exercice se fait pour un client qui souhaite calculer les nombres de Fibonacci pour des indices jusqu'à 1 000 000.
 
 == Structure
 
