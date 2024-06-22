@@ -1,10 +1,10 @@
-import {Matrix22, Q_INVERSE, Q, IDENTITY} from "./matrix22.js";
+import {Matrix22, INVERSE_OF_Q, Q, IDENTITY} from "./matrix22.js";
 
 const halfOf = (n: number) => (n / 2) | 0;
 
 export class Fibonacci {
 
-    #memo: Matrix22[] = [Q_INVERSE, IDENTITY];
+    #memo: Matrix22[] = [INVERSE_OF_Q, IDENTITY];
 
     qToThePowerOf(exponent: number): Matrix22 {
         if (this.#memo[exponent + 1] !== undefined) {

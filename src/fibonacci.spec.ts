@@ -8,7 +8,7 @@ const LARGE_FIBONACCI_VALUES = fs.readFileSync("data/large-fibonacci-values.json
 const EXPECTED_FIBONACCI_VALUES = JSON.parse(LARGE_FIBONACCI_VALUES,
     (key, value) => typeof value === 'number' ? BigInt(value) : value)
 
-describe('fibonacci series', () => {
+describe('Fibonacci series', () => {
 
     const fibonacci: Fibonacci = new Fibonacci();
 

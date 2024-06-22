@@ -1,8 +1,8 @@
 import {describe, it} from "node:test";
 import * as assert from "node:assert";
-import {IDENTITY, Matrix22, Q_INVERSE, Q} from "./matrix22.js";
+import {IDENTITY, Matrix22, INVERSE_OF_Q, Q} from "./matrix22.js";
 
-describe('matrix22', () => {
+describe('Matrix 2x2', () => {
 
     const Q_SQUARED: Matrix22 = new Matrix22(
         BigInt(2), BigInt(1),
@@ -19,7 +19,7 @@ describe('matrix22', () => {
         })
 
         it('returns identity when multiplying Q by its inverse', () => {
-            assert.deepStrictEqual(Q.times(Q_INVERSE), IDENTITY);
+            assert.deepStrictEqual(Q.times(INVERSE_OF_Q), IDENTITY);
         })
     })
 

@@ -24,6 +24,6 @@ export const Q: Matrix22 = new Matrix22(
     BigInt(1), BigInt(1),
     BigInt(1), BigInt(0))
 
-export const Q_INVERSE: Matrix22 = new Matrix22(
+export const INVERSE_OF_Q: Matrix22 = new Matrix22(
     BigInt(0), BigInt(1),
     BigInt(1), BigInt(-1))
