@@ -1,4 +1,4 @@
-import {describe, it} from 'node:test'
+import {describe, it, beforeEach} from 'node:test'
 import * as assert from 'node:assert';
 import * as fs from "node:fs";
 
@@ -9,8 +9,9 @@ const EXPECTED_FIBONACCI_VALUES = JSON.parse(LARGE_FIBONACCI_VALUES,
     (key, value) => typeof value === 'number' ? BigInt(value) : value)
 
 describe('Fibonacci series', () => {
+    let fibonacci: Fibonacci;
 
-    const fibonacci: Fibonacci = new Fibonacci();
+    beforeEach(() => fibonacci = new Fibonacci());
 
     it('computes 0 for index 0', () => {
         assert.equal(fibonacci.of(0), 0);

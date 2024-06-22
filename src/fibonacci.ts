@@ -1,23 +1,33 @@
 import {Matrix22, INVERSE_OF_Q, Q, IDENTITY} from "./matrix22.js";
 
+interface Memo {
+    [exponent: number]: Matrix22;
+}
+
 const halfOf = (n: number) => (n / 2) | 0;
 
 export class Fibonacci {
 
-    #memo: Matrix22[] = [INVERSE_OF_Q, IDENTITY];
+    #powersOfQ: Memo = {
+        "-1": INVERSE_OF_Q,
+        "0": IDENTITY,
+        "1": Q
+    };
 
     qToThePowerOf(exponent: number): Matrix22 {
-        if (this.#memo[exponent + 1] !== undefined) {
-            return this.#memo[exponent + 1];
+        if (this.#powersOfQ[exponent] !== undefined) {
+            return this.#powersOfQ[exponent];
         }
 
         const halfExponent = halfOf(exponent);
-        let matrixPowered = this.qToThePowerOf(halfExponent).squared();
-        if (exponent % 2 !== 0) {
-            matrixPowered = matrixPowered.times(Q);
-        }
+        const fastExponentiation = exponent % 2 == 0 ?
+            this.qToThePowerOf(halfExponent)
+                .squared() :
+            this.qToThePowerOf(halfExponent)
+                .squared()
+                .times(Q);
 
-        return (this.#memo[exponent + 1] = matrixPowered);
+        return (this.#powersOfQ[exponent] = fastExponentiation);
     }
 
     of(index: number): bigint {
